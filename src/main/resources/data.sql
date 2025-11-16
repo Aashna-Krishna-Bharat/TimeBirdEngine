@@ -1,4 +1,4 @@
-INSERT INTO patient (name, gender, birth_date, email, blood_group)
+INSERT INTO Worker (name, gender, birth_date, email, blood_group)
 VALUES
     ('Aarav Sharma', 'MALE', '1990-05-10', 'aarav.sharma@example.com', 'O_POSITIVE'),
     ('Diya Patel', 'FEMALE', '1995-08-20', 'diya.patel@example.com', 'A_POSITIVE'),
@@ -12,7 +12,7 @@ VALUES
     ('Dr. Sneha Kapoor', 'Dermatology', 'sneha.kapoor@example.com'),
     ('Dr. Arjun Nair', 'Orthopedics', 'arjun.nair@example.com');
 
-INSERT INTO appointment (appointment_time, reason, doctor_id, patient_id)
+INSERT INTO appointment (appointment_time, reason, doctor_id, Worker_id)
 VALUES
   ('2025-07-01 10:30:00', 'General Checkup', 1, 2),
   ('2025-07-02 11:00:00', 'Skin Rash', 2, 2),

@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.codingshuttle.youtube</groupId>
-	<artifactId>hospitalManagement</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>hospitalManagement</name>
-	<description>Hospital management system project for Spring Boot</description>
+	<artifactId>timebird-engine</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<name>timebird-engine</name>
+	<description>Timebird engine project for Spring Boot</description>
 	<url/>
 	<licenses>
 		<license/>
@@ -44,6 +44,11 @@
 			<artifactId>postgresql</artifactId>
 			<scope>runtime</scope>
 		</dependency>
+		<dependency>
+<groupId>com.mysql</groupId>
+<artifactId>mysql-connector-j</artifactId>
+<scope>runtime</scope>
+</dependency>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
