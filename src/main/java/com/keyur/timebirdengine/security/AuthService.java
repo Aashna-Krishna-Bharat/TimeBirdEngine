@@ -57,7 +57,7 @@ System.out.println("generated user Id = "+user.getId());
                 .username(signupRequestDto.getUsername())
                 .providerId(providerId)
                 .providerType(authProviderType)
-                .roles(signupRequestDto.getRoles()) // Role.Worker
+             //   .roles(signupRequestDto.getRoles()) // Role.Worker
                 .build();
 
         if(authProviderType == AuthProviderType.EMAIL) {
@@ -96,7 +96,7 @@ System.out.println("generated user Id = "+user.getId());
         if(user == null && emailUser == null) {
             // signup flow:
             String username = authUtil.determineUsernameFromOAuth2User(oAuth2User, registrationId, providerId);
-            user = signUpInternal(new SignUpRequestDto(username, null, name, Set.of(RoleType.WORKER)), providerType, providerId);
+            user = signUpInternal(new SignUpRequestDto(username, null, name), providerType, providerId);
         } else if(user != null) {
             if(email != null && !email.isBlank() && !email.equals(user.getUsername())) {
                 user.setUsername(email);

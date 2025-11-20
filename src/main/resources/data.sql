@@ -1,4 +1,4 @@
-INSERT INTO Worker (name, gender, birth_date, email, blood_group)
+/*INSERT INTO Worker (name, gender, birth_date, email, blood_group)
 VALUES
     ('Aarav Sharma', 'MALE', '1990-05-10', 'aarav.sharma@example.com', 'O_POSITIVE'),
     ('Diya Patel', 'FEMALE', '1995-08-20', 'diya.patel@example.com', 'A_POSITIVE'),
@@ -19,4 +19,4 @@ VALUES
   ('2025-07-03 09:45:00', 'Knee Pain', 3, 3),
   ('2025-07-04 14:00:00', 'Follow-up Visit', 1, 1),
   ('2025-07-05 16:15:00', 'Consultation', 1, 4),
-  ('2025-07-06 08:30:00', 'Allergy Treatment', 2, 5);
+  ('2025-07-06 08:30:00', 'Allergy Treatment', 2, 5);*/

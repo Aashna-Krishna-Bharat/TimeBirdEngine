@@ -1,24 +1,10 @@
 package com.keyur.timebirdengine;
 
-import com.keyur.timebirdengine.entity.Appointment;
-import com.keyur.timebirdengine.entity.Insurance;
-import com.keyur.timebirdengine.service.AppointmentService;
-import com.keyur.timebirdengine.service.InsuranceService;
-import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 @SpringBootTest
 public class InsuranceTests {
 
-    @Autowired
-    private InsuranceService insuranceService;
-
-    @Autowired
-    private AppointmentService appointmentService;
 
 	/*
 	 * @Test public void testInsurance() { Insurance insurance = Insurance.builder()

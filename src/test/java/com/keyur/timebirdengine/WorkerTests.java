@@ -1,17 +1,6 @@
 package com.keyur.timebirdengine;
 
-import com.keyur.timebirdengine.dto.BloodGroupCountResponseEntity;
-import com.keyur.timebirdengine.entity.type.BloodGroupType;
-import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
-
-import java.time.LocalDate;
-import java.util.List;
 
 @SpringBootTest
 public class WorkerTests {

@@ -1,25 +1,20 @@
 package com.keyur.timebirdengine.repository;
 
-import com.keyur.timebirdengine.dto.BloodGroupCountResponseEntity;
 import com.keyur.timebirdengine.entity.Worker;
-import com.keyur.timebirdengine.entity.type.BloodGroupType;
-import jakarta.transaction.Transactional;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
-
 import java.time.LocalDate;
 import java.util.List;
 
 public interface WorkerRepository extends JpaRepository<Worker, Long> {
     Worker findByName(String name);
-
-    List<Worker> findByBirthDateOrEmail(LocalDate birthDate, String email);
-
-    List<Worker> findByBirthDateBetween(LocalDate startDate, LocalDate endDate);
+	/*
+	 * List<Worker> findByBirthDateOrEmail(LocalDate birthDate, String email);
+	 * 
+	 * List<Worker> findByBirthDateBetween(LocalDate startDate, LocalDate endDate);
+	 */
 
     List<Worker> findByNameContainingOrderByIdDesc(String query);
 //

@@ -2,7 +2,6 @@ package com.keyur.timebirdengine.entity;
 
 import com.keyur.timebirdengine.entity.type.AuthProviderType;
 import com.keyur.timebirdengine.entity.type.RoleType;
-import com.keyur.timebirdengine.security.RolePermissionMapping;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
@@ -21,7 +20,7 @@ import java.util.stream.Collectors;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Table(name = "app_user", indexes = {
+@Table(name = "TimeBird_USers", indexes = {
         @Index(name = "idx_provider_id_provider_type", columnList = "providerId, providerType")
 })
 public class User implements UserDetails {
@@ -45,10 +44,10 @@ public class User implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-//        return roles.stream()
-//                .map(role -> new SimpleGrantedAuthority("ROLE_"+role.name()))
-//                .collect(Collectors.toSet());
-        Set<SimpleGrantedAuthority> authorities = new HashSet<>();
+        return roles.stream()
+                .map(role -> new SimpleGrantedAuthority("ROLE_"+role.name()))
+                .collect(Collectors.toSet());
+       /* Set<SimpleGrantedAuthority> authorities = new HashSet<>();
         roles.forEach(
                 role -> {
                     Set<SimpleGrantedAuthority> permissions = RolePermissionMapping.getAuthoritiesForRole(role);
@@ -56,7 +55,7 @@ public class User implements UserDetails {
                     authorities.add(new SimpleGrantedAuthority("ROLE_"+role.name()));
                 }
         );
-        return authorities;
+        return authorities; */
     }
 }
 

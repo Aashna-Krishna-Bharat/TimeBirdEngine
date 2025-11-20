@@ -1,9 +1,6 @@
 package com.keyur.timebirdengine.controller;
 
-import com.keyur.timebirdengine.dto.DoctorResponseDto;
-import com.keyur.timebirdengine.dto.OnboardDoctorRequestDto;
 import com.keyur.timebirdengine.dto.WorkerResponseDto;
-import com.keyur.timebirdengine.service.DoctorService;
 import com.keyur.timebirdengine.service.WorkerService;
 
 import lombok.RequiredArgsConstructor;
@@ -19,7 +16,6 @@ import java.util.List;
 public class AdminController {
 
     private final WorkerService workerService;
-    private final DoctorService doctorService;
 
     @GetMapping("/workers")
     public ResponseEntity<List<WorkerResponseDto>> getAllWorkers(
@@ -29,8 +25,4 @@ public class AdminController {
         return ResponseEntity.ok(workerService.getAllWorkers(pageNumber, pageSize));
     }
 
-    @PostMapping("/onBoardNewWorker")
-    public ResponseEntity<DoctorResponseDto> onBoardNewDoctor(@RequestBody OnboardDoctorRequestDto onboardDoctorRequestDto) {
-        return ResponseEntity.status(HttpStatus.CREATED).body(doctorService.onBoardNewDoctor(onboardDoctorRequestDto));
-    }
 }
