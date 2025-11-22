@@ -21,5 +21,5 @@ FROM eclipse-temurin:21-jdk
 WORKDIR /app
 COPY --from=build /app/target/timebird-engine-1.0.0-SNAPSHOT.jar app.jar
 EXPOSE 8080
-CMD ["ls", "-l", "/app"]
-#ENTRYPOINT ["java", "-jar", "app.jar"]
+#CMD ["ls", "-l", "/app"]
+ENTRYPOINT ["java","-jar","app.jar","--logging.file.name=/app/app.log"]
