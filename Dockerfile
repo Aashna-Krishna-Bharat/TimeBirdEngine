@@ -1,7 +1,19 @@
 # Build stage
 FROM eclipse-temurin:21-jdk AS build
 WORKDIR /app
-COPY . .
+
+# Copy only pom.xml first to cache dependencies
+COPY pom.xml .
+COPY mvnw .
+COPY .mvn .mvn
+
+# Download dependencies (cached in Docker layer)
+RUN ./mvnw dependency:go-offline
+
+# Copy the rest of the source code
+COPY src src
+
+# Build the JAR
 RUN ./mvnw -B -DskipTests clean package
 
 # Runtime stage
